@@ -42,12 +42,11 @@ function setTime() {
       }
     }
   }
-  $reset.addEventListener("click", resetTime);
-  function resetTime() {
+  $reset.addEventListener("click", () => {
     document.getElementById("time").innerHTML = 0;
     $set.style.display = "block";
     $reset.style.display = "none";
     clearInterval(timeInterval);
-  }
+  });
   timeInterval = setInterval(timeHandler, 1000);
 }
