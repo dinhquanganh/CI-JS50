@@ -1,0 +1,13 @@
+</> Lập trình hướng đối tượng (OOP) là gì?
+
+  --> Concept : Lập trình hướng đối tượng (OOP) là một kỹ thuật lập trình cho phép lập trình viên tạo ra các đối tượng trong 
+               code trừu tượng hóa các đối tượng.
+  --> Object oriented program : 
+        1. Tính đóng gói (Encapsulation): Là cách để che dấu những tính chất xử lý bên trong của đối tượng, những đối tượng khác
+           không thể tác động trực tiếp làm thay đổi trạng thái  chỉ có thể tác động thông qua các method public của đối tượng đó.
+        2. Tính kế thừa (Inheritance): Là kỹ thuật cho phép kế thừa lại những tính năng mà một đối tượng khác đã có, giúp tránh 
+           việc code lặp dư thừa mà chỉ xử lý công việc tương tự.
+        3. Tính đa hình (Polymorphism ): Là một đối tượng thuộc các lớp khác nhau có thể hiểu cùng một thông điệp theo cách 
+           khác nhau.
+        4. Tính trừu tượng(Abstraction): Là phương pháp trừu tượng hóa định nghĩa lên những hành động, tính chất của loại đối
+           tượng nào đó cần phải có.

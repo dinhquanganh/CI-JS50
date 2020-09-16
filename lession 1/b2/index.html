@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TrafficLight -</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+
+
+</head>
+
+<body>
+    <section>
+        <div id="setupTime">
+            <label>Time(s)</label>
+            <input class="input" id="value-red" style="background-color: red;" value="4" />
+            <input class="input" id="value-yellow" style="background-color: rgb(224, 206, 42);" value="2" />
+            <input class="input" id="value-green" style="background-color: green;" value="3" />
+            <button class="btn" id="set">SET</button>
+            <button class="btn" id="reset">RESET</button>
+
+        </div>
+
+        <div id="trafficlight">
+            <div class="light" id="red"></div>
+            <div class="light" id="yellow"></div>
+            <div class="light" id="green"></div>
+            <div id="time">0</div>
+        </div>
+    </section>
+    <script src="app.js"></script>
+</body>
+
+</html>
