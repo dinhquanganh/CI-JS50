@@ -17,7 +17,6 @@ function setTime() {
     let $green = document.getElementById("green");
     let $yellow = document.getElementById("yellow");
     let $red = document.getElementById("red");
-    console.log(sec);
     sec--;
     document.getElementById("time").innerHTML = sec;
     if (checkLight == 1) {
@@ -50,6 +49,5 @@ function setTime() {
     $reset.style.display = "none";
     clearInterval(timeInterval);
   }
-
   timeInterval = setInterval(timeHandler, 1000);
 }
