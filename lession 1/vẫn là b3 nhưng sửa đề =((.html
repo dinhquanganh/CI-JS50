@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let arrayEx = ["a", 1, "a", 1, "a", "b", 3, "a", "c", 4, 4, "c", "b", 5, "a"];
+        let checkKey;
+        let i = 0;
+        while (i < arrayEx.length - 1) {
+            checkKey = true;
+            let j = i + 1;
+            while (j < arrayEx.length) {
+                if (arrayEx[i] == arrayEx[j]) {
+                    arrayEx.splice(j, 1);
+                    checkKey = false;
+                } else { j++ }
+            }
+            if (checkKey == false) {
+                arrayEx.splice(i, 1);
+            } else { i++ }
+        }
+        alert(arrayEx);
+    </script>
+</body>
+
+</html>
