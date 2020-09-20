@@ -95,23 +95,24 @@
         }
         // Create OBJECT--------------------------------------------------------------
 
-        let inputOwner = 'Pastetu'
+        let inputOwner = prompt('What is your name?');
         let personLMain = [];
         let listMain = new list(inputOwner, personLMain);
         let inputNum;
         while (true) {
             let input = prompt(
-                `Welcome to my world, I'm Pastetu.
-You want see my Crush and my Ex-Lover (Press: 1) 
-Do you think I still have a crush and you want add? (Press: 2)
-Do you think I still have a Ex-Lover and you want add? (Press: 3) `);
+                `Hi ${inputOwner}. Welcome to my world, I'm Pastetu. Now, you can create infomation your Crush or your Ex-Lover. Thanks for your using!
+
+Do you want see your list (Press: 1) 
+Do you think you still have a crush and you want add? (Press: 2)
+Do you think you still have a Ex-Lover and you want add? (Press: 3) `);
             if (input == '1') {
                 listMain.showAll();
             } else if (input == '2') {
                 listMain.addCr();
             } else if (input == '3') {
                 listMain.addEx_Lover();
-            } else { break; }
+            } else { break }
         }
 
 
