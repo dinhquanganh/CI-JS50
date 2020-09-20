@@ -9,23 +9,26 @@
 
 <body>
     <script>
-        let arrayEx = ["a", 1, "a", 1, "a", "b", 3, "a", "c", 4, 4, "c", "b", 5, "a"];
-        let checkKey;
-        let i = 0;
-        while (i < arrayEx.length - 1) {
-            checkKey = true;
-            let j = i + 1;
-            while (j < arrayEx.length) {
-                if (arrayEx[i] == arrayEx[j]) {
-                    arrayEx.splice(j, 1);
-                    checkKey = false;
-                } else { j++ }
+        let noob = ["a", 1, "a", 1, "a", "b", 3, "a", "c", 4, 4, "c", "b", 5, "a"];
+        function ar(arrayEx) {
+            let checkKey;
+            let i = 0;
+            while (i < arrayEx.length - 1) {
+                checkKey = true;
+                let j = i + 1;
+                while (j < arrayEx.length) {
+                    if (arrayEx[i] == arrayEx[j]) {
+                        arrayEx.splice(j, 1);
+                        checkKey = false;
+                    } else { j++ }
+                }
+                if (checkKey == false) {
+                    arrayEx.splice(i, 1);
+                } else { i++ }
             }
-            if (checkKey == false) {
-                arrayEx.splice(i, 1);
-            } else { i++ }
+            return alert(arrayEx);
         }
-        alert(arrayEx);
+        ar(noob);
     </script>
 </body>
 

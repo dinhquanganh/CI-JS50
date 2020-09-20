@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Create CLASS--------------------------------------------------------------
+
+        class person {
+            name; age; sex; address;
+            constructor(name, age, sex, address) {
+                this.name = name;
+                this.age = age;
+                this.sex = sex;
+                this.address = address;
+            }
+            sayhi() {
+                console.log(
+                    `Hi, I'm Pastetu. Welcome to my world!`
+                );
+            }
+            introduce() {
+                console.log(`${this.name}, ${this.age}, ${this.sex}, ${this.address}`)
+            }
+
+        }
+        class crush extends person {
+            favorites;
+            appearance;
+            constructor(name, age, address, favorites, appearance) {
+                super(name, age, 'girl', address);
+                this.favorites = favorites;
+                this.appearance = appearance;
+            }
+            sayhi() {
+                alert('I do love you at the first sight')
+            }
+        }
+        class ex_lover extends person {
+            appearance;
+            constructor(name, age, address, appearance) {
+                super(name, age, 'girl', address);
+                this.appearance = appearance;
+            }
+            sayhi() {
+                alert("I can't stop thinking about you.")
+            }
+        }
+        class list {
+            owner; personL = [];
+            constructor(owner, personL) {
+                this.owner = owner;
+                this.personL = personL;
+            }
+            showAll() {
+                let ad = this.personL;
+                let i = 0;
+                while (true) {
+                    if (ad[i] == undefined) {
+                        break;
+                    } else {
+                        if (ad[i].favorites == undefined) {
+                            alert(`Name Ex-Lover: ${ad[i].name}, Age: ${ad[i].age}, Address: ${ad[i].address}, Appearance: ${ad[i].appearance}`);
+                        } else {
+                            alert(`Name Crush: ${ad[i].name}, Age: ${ad[i].age}, Address: ${ad[i].address}, Favorites ${ad[i].favorites}, Appearance: ${ad[i].appearance}`);
+                        }
+                        i++;
+                    }
+                }
+            }
+            addCr() {
+                alert('Provide crush information!');
+                let namePer = prompt('Name?');
+                let agePer = prompt('Age?');
+                let addressPer = prompt('Address?');
+                let favorites = prompt('Favorites?');
+                let appearancePer = prompt('Appearance');
+                let newPer = new crush(namePer, agePer, addressPer, favorites, appearancePer);
+                this.personL.push(newPer);
+            }
+            addEx_Lover() {
+                alert('Provide ex-lover information!');
+                let namePer = prompt('Name?');
+                let agePer = prompt('Age?');
+                let addressPer = prompt('Address?');
+                let appearancePer = prompt('Appearance');
+                let newPer = new ex_lover(namePer, agePer, addressPer, appearancePer);
+                this.personL.push(newPer);
+            }
+        }
+        // Create OBJECT--------------------------------------------------------------
+
+        let inputOwner = 'Pastetu'
+        let personLMain = [];
+        let listMain = new list(inputOwner, personLMain);
+        let inputNum;
+        while (true) {
+            let input = prompt(
+                `Welcome to my world, I'm Pastetu.
+You want see my Crush and my Ex-Lover (Press: 1) 
+Do you think I still have a crush and you want add? (Press: 2)
+Do you think I still have a Ex-Lover and you want add? (Press: 3) `);
+            if (input == '1') {
+                listMain.showAll();
+            } else if (input == '2') {
+                listMain.addCr();
+            } else if (input == '3') {
+                listMain.addEx_Lover();
+            } else { break; }
+        }
+
+
+
+
+
+    </script>
+</body>
+
+</html>

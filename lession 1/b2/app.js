@@ -1,7 +1,6 @@
 let $set = document.getElementById("set");
 let $reset = document.getElementById("reset");
 $set.addEventListener("click", setTime);
-let checkout = true;
 function setTime() {
   $set.style.display = "none";
   $reset.style.display = "block";

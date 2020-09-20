@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let stringO = prompt('Input String 1 ?');
+        let stringT = prompt('Input String 2 ?');
+        let checkStrO;
+        let checkStrT;
+        let checkKey;
+
+        if (stringO.length == stringT.length) {
+            checkStrO = stringO;
+            checkStrT = stringT;
+            let i = 0;
+            let j;
+            while (i < checkStrO.length) {
+                checkKey = false;
+                j = 0;
+                while (j < checkStrT.length) {
+                    if (checkStrO[i] === checkStrT[j]) {
+                        checkKey = true;
+                        checkStrT = checkStrT.replace(checkStrT[j], '');
+                        break;
+                    } else { j++ }
+                }
+                if (checkKey == true) {
+                    checkStrO = checkStrO.replace(checkStrO[i], '');
+                } else { i++ }
+            }
+            if (checkStrO == 0 && checkStrT == 0) {
+                alert(true);
+            } else { alert(false) };
+        } else {
+            alert(false);
+        }
+
+    </script>
+</body>
+
+</html>
