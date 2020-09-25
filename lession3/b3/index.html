@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let time12h = "07:05:45PM";
+        let time24h;
+        changeTime = (time12h, time24h) => {
+            let specify = time12h.slice(8, 10);
+            let change = Number(time12h.slice(0, 2)) + 12;
+            if (specify == "PM" || specify == "pm") {
+                time24h = `${change}${time12h.slice(2, 8)}`;
+            } else if (specify == "AM" || specify == "am") {
+                time24h = time12h.slice(0, 8);
+            } else {
+                console.log("format error");
+            }
+            console.log(time24h);
+        };
+        changeTime(time12h, time24h);
+    </script>
+</body>
+
+</html>
