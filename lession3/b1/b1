@@ -1,0 +1,51 @@
+
+//Custom Elements
+    Nói một cách đơn giản, đây là các thành phần HTML hợp lệ với các template, behaviors và tag name tùy chỉnh 
+    (ví dụ: <one-dialog> ) được tạo bằng một bộ API JavaScript. Các thành phần tùy chỉnh được mô tả trong custom-element.
+
+
+//Shadow DOM
+    Có khả năng cô lập CSS và JavaScript, gần giống như <iframe> . Điều này được định nghĩa trong shadow-trees .
+
+
+//HTML templates
+    Các template do người dùng xác định trong HTML không được hiển thị cho đến khi được gọi. Thẻ <template> 
+    được xác định trong template-element .
+
+-------------------------------------------------------------------------------------------------------------------------------
+//VONG DOI 1 COMPONENT 
+ - Vòng đời là phương thức gọi lại được kích hoạt ở một giai đoạn cụ thể của vòng đời của phiên bản thành phần.
+1. connectedCallback()
+ Được gọi khi phần tử được chèn vào tài liệu. Móc này chảy từ cha mẹ sang con. Bạn không thể truy cập các phần tử con trong 
+ nội dung thành phần vì chúng chưa tồn tại. Bạn có thể truy cập vào các yếu tố máy chủ lưu trữ với .this.template
+ Sử dụng để tương tác với môi trường của một thành phần. Ví dụ: sử dụng nó để: connectedCallback()
+
+ - Thiết lập giao tiếp với tài liệu hoặc vùng chứa hiện tại và phối hợp hành vi với môi trường
+ - Thực hiện các tác vụ khởi tạo, chẳng hạn như tìm nạp dữ liệu, thiết lập bộ nhớ cache hoặc nghe các sự kiện (chẳng hạn như
+   sự kiện đăng ký xuất bản)
+
+ Không sử dụng để thay đổi trạng thái của một cấu phần, chẳng hạn như tải giá trị hoặc thiết đặt thuộc tính. Sử dụng getters 
+ và setters để thay thế.connectedCallback()
+
+ Vòng đời thường được ghép nối . Sử dụng để hiểu trạng thái của thế giới "bên ngoài" (môi trường chứa của một thành phần)
+ và sử dụng để hiểu trạng thái của thế giới "bên trong" (giao diện người dùng và trạng thái tài sản của một thành phần). Đối với
+ mẫu mã, xem Chạy mã khi một thành phần được chèn vào hoặc loại bỏ từ DOM.connectedCallback(),renderedCallback(),connectedCallback(),
+ renderedCallback().
+
+2. attributeChangedCallback()
+ - Gọi lại được chạy bất cứ khi nào một trong các thuộc tính của phần tử được thay đổi theo một cách nào đó. Như bạn có thể thấy từ 
+ các thuộc tính của nó, có thể hành động trên các thuộc tính riêng lẻ, nhìn vào tên của chúng và các giá trị thuộc tính cũ và mới. 
+ Tuy nhiên, trong trường hợp này, chúng ta chỉ đang chạy lại hàm để đảm bảo rằng phong cách của hình vuông được cập nhật theo các 
+ giá trị mới:attributeChangedCallback().
+
+ -Lưu ý rằng để có được gọi lại để bắn khi một thuộc tính thay đổi, bạn phải quan sát các thuộc tính. Điều này được thực hiện bằng 
+ cách xác định một phương thức bên trong lớp phần tử tùy chỉnh - điều này nên một mảng có chứa tên của các thuộc tính bạn muốn quan 
+ sát: attributeChangedCallback() 
+
+3. disconnectedCallback()
+ Được gọi là khi các yếu tố được lấy ra từ một tài liệu. Móc này chảy từ cha mẹ sang con. Đối với mẫu mã, xem Chạy mã khi một thành 
+ phần được chèn vào hoặc loại bỏ từ DOM.
+
+4. static get observedAttributes()
+ Điều này được thực hiện bằng cách chỉ định một phương thức static get importantAttributes () bên trong lớp phần tử tùy chỉnh - điều 
+ này sẽ trả về một mảng chứa tên của các thuộc tính bạn muốn quan sát
