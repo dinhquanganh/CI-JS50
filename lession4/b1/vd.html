@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quang Anh</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        #pokemon-container {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .one-pokemon {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 0 1px 1px red;
+            margin: 3px 3px;
+        }
+        .pokemon-name {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <input id="input" type="number" />
+    <button type="button" id="button">Submit</button>
+    <div id="pokemon-container"></div>
+
+
+    <script>
+        const pokemonAdd = document.getElementById('pokemon-add');
+        const input = document.getElementById('input');
+
+        async function getPokemInfo(pokeId) {
+            const respone = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokeId}`);
+            const pokeData = await respone.json();
+            console.log(pokeData);
+            const pokeName = pokeData.species.name;
+            console.log(pokeName);
+            const pokeContain = document.getElementById('pokemon-container');
+            pokeContain.innerHTML +=
+                `<div class="one-pokemon">
+        <div class="pokemon-name">${pokeName}</div>
+        <img src=${pokeData.sprites.front_default} alt="a">
+    </div>`;
+        }
+        button.addEventListener('click', () => {
+            getPokemInfo(Number(input.value));
+        });
+    </script>
+</body>
+
+</html>
