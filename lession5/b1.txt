@@ -1,0 +1,14 @@
+<*> Sự khác nhau ở cú pháp
+    Arrow Function sử dụng kí tự =>
+
+        hello = () => {
+            console.log('hello')
+        }
+        // hello()
+
+    Function thông thường thì :
+
+        function hello(){
+            console.log('hello')
+        }
+        // hello()

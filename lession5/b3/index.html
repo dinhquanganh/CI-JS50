@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+</head>
+<style>
+  body {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background: linear-gradient(45deg, #fead06, #c00def) no-repeat;
+  }
+  form-sign {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+</style>
+
+<body>
+  <form-sign></form-sign>
+</body>
+
+<template id="template-input">
+  <link rel="stylesheet" href="./style.css" />
+  <div class="input-box">
+    <label for="" id="label-input"></label>
+    <input type="text" id="main-input" required="required" />
+    <div id="error-input"></div>
+  </div>
+</template>
+
+<template id="template-form-sign">
+  <link rel="stylesheet" href="./style.css" />
+  <form class="form-sign">
+    <label class="titleBox">
+      <h1 class="title">Sign In</h1>
+    </label>
+    <input-box id="email" label="Email" type="email" error="" value=""></input-box>
+    <input-box id="password" label="Password" type="password" error=""></input-box>
+    <button type="submit" id="submit">Submit</button>
+  </form>
+</template>
+
+<script src="./script/app.js" type="module"></script>
+
+</html>
