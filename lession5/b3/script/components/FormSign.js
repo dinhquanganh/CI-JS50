@@ -21,11 +21,13 @@ class FormSign extends HTMLElement {
     //   get data
     let email = this.$email.value;
     let password = this.$password.value;
-    console.log(email, password);
     // check data
-    if (this.validate(this.email, this.password)) {
-      alert("Success ✨");
-    }
+    if (email.split("").length != 0 || password.split("").length != 0) {
+      console.log(email, password);
+      if (this.validate(this.email, this.password)) {
+        alert("Success ✨");
+      }
+    } else alert("Cannot be left blank");
   }
 
   validate(email, password) {
