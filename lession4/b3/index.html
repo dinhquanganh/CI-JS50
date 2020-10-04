@@ -1,55 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<style>
+  </head>
+  <style>
     body {
-        width: 100vw;
-        height: 100vh;
-        overflow: hidden;
-        background: linear-gradient(45deg, #fead06, #c00def) no-repeat;
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+      background: linear-gradient(45deg, #fead06, #c00def) no-repeat;
     }
     form-sign {
-        display: flex;
-        justify-content: center;
-        align-items: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
-</style>
+  </style>
 
-<body>
+  <body>
     <form-sign></form-sign>
-</body>
-<template id="form-sign">
+  </body>
+  
+  <template id="form-sign">
     <link rel="stylesheet" href="./style.css" />
     <form>
-        <label class="titleBox">
-            <h1 class="title">Sign In</h1>
-        </label>
-        <div class="inputBox">
-            <label for="username">Username</label>
-            <input type="text" id="username" required="required" />
-        </div>
-        <div class="inputBox">
-            <label for="email">Email</label>
-            <input type="text" id="email" required="required" />
-        </div>
-        <div class="inputBox">
-            <label for="password">Password</label>
-            <input type="text" id="password" required="required" />
-        </div>
-        <div class="inputBox">
-            <label for="re_password">Retype password</label>
-            <input type="text" id="re-password" required="required" />
-        </div>
-        <div class="inputBox">
-            <input type="submit" id="submit" required="required" value="Submit" />
-        </div>
+      <label class="titleBox">
+        <h1 class="title">Sign In</h1>
+      </label>
+      <div class="inputBox">
+        <label for="username">Username</label>
+        <input type="text" id="username" required="required" />
+      </div>
+      <div class="inputBox">
+        <label for="email">Email</label>
+        <input type="text" id="email" required="required" />
+      </div>
+      <div class="inputBox">
+        <label for="password">Password</label>
+        <input type="text" id="password" required="required" />
+      </div>
+      <div class="inputBox">
+        <label for="re_password">Retype password</label>
+        <input type="text" id="re-password" required="required" />
+      </div>
+      <div class="inputBox">
+        <input type="submit" id="submit" value="Submit" />
+      </div>
     </form>
-</template>
-<script src="./script/app.js" type="module"></script>
-
+  </template>
+  <script src="./script/app.js" type="module"></script>
 </html>

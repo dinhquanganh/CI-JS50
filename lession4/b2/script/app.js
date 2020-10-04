@@ -99,8 +99,6 @@ while (true) {
     action.list();
   } else if (start == 5) {
     break;
-  } else {
-    alert("Invalid");
   }
 }
 

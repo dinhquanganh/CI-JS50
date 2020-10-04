@@ -182,8 +182,7 @@ export default class Action {
               alert("Not Found 😪");
             }
           }
-        }
-        if (keyFind == 2) {
+        } else if (keyFind == 2) {
           let find = prompt("Enter author name?").toLowerCase();
           let stop = true;
           for (let i = 0; i < setArr.dataBook.length; i++) {
@@ -195,8 +194,7 @@ export default class Action {
               alert("Not Found 😪");
             }
           }
-        }
-        if (keyFind == 3) {
+        } else if (keyFind == 3) {
           let find = prompt("Enter genre?").toLowerCase();
           let stop = true;
           for (let i = 0; i < setArr.dataBook.length; i++) {

@@ -15,6 +15,6 @@ class MyFormSign extends HTMLElement {
     return ["username", "email", "password", "re_pasword"];
   }
 
-
+  
 }
 window.customElements.define("form-sign", MyFormSign);
