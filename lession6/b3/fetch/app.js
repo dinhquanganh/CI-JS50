@@ -7,4 +7,3 @@ fetch("https://news-ncov-api.herokuapp.com/news?_page=1&_limit=20")
       );
     });
   });
-

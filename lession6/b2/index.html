@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./style/index-style.css" />
+</head>
+
+<body>
+    <head-page hello="Hello, Welcome to my blog"
+        image-head="https://images.pexels.com/photos/1485894/pexels-photo-1485894.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940">
+    </head-page>
+    <div class="all">
+        <main-news link="https://topdev.vn/blog/recruitment-marketing-4-y-tuong-sang-tao-noi-dung/"
+            title="Recruitment Marketing – Khám phá 4 ý tưởng sáng tạo nội dung"
+            image="https://topdev.vn/blog/wp-content/uploads/2020/10/nguyentac.png"></main-news>
+        <main-news link="https://topdev.vn/blog/tai-sao-code-cua-toi-thuong-ngan-gon-nhu-vay/"
+            title="Tại sao code của tôi thường ngắn gọn như vậy"
+            image="https://topdev.vn/blog/wp-content/uploads/2020/10/entity-951x420.png"></main-news>
+        <main-news link="https://topdev.vn/blog/kinh-nghiem-lam-viec-duoc-tinh-nhu-the-nao/"
+            title="Kinh nghiệm làm việc được tính như thế nào?"
+            image="https://topdev.vn/blog/wp-content/uploads/2020/10/Screen-Shot-2020-01-18-at-22.38.47.png">
+        </main-news>
+        <main-news link="https://topdev.vn/blog/tu-lap-trinh-vien-junior-den-mid/"
+            title="Từ lập trình viên Junior, cùng mình trở thành 1 lập trình viên mid-level nhé"
+            image="https://topdev.vn/blog/wp-content/uploads/2020/07/hanh-trinh-tu-lap-trinh-vien-junior-den-mid2.jpg">
+        </main-news>
+        <main-news link="https://topdev.vn/blog/nhung-projects-giup-nang-hang-front-end-developer/"
+            title="Những projects giúp nâng hạng Front-end Developer"
+            image="https://topdev.vn/blog/wp-content/uploads/2020/09/Quiz-example-by-SitePoint.gif"></main-news>
+        <main-news link="https://topdev.vn/blog/tim-hieu-thuoc-tinh-position-trong-css/"
+            title="Tất tần tật về thuộc tính position trong CSS"
+            image="https://topdev.vn/blog/wp-content/uploads/2020/09/1_V7_Sqedl3-GQhgep-l9ffg.png"></main-news>
+        <main-news link="https://topdev.vn/blog/html-css-la-gi-front-end-developer/"
+            title="HTML CSS là gì? Dùng HTML/CSS để dựng ngay portfolio xịn sò cho riêng bạn"
+            image="https://topdev.vn/blog/wp-content/uploads/2020/08/10.jpg"></main-news>
+        <main-news link="https://topdev.vn/blog/lo-trinh-cho-moi-nha-phat-trien-web-trong-nam-2020/"
+            title="Lộ trình cho mọi lập trình viên web trong năm 2020"
+            image="https://topdev.vn/blog/wp-content/uploads/2020/01/intro-copy-768x277.jpg"></main-news>
+        <main-news link="https://topdev.vn/blog/bot-hao-tam-ton-suc-voi-cac-meo-cho-dan-thiet-ke-ui-ux/"
+            title="Bớt hao tâm tổn sức với các mẹo cho dân thiết kế UI/UX"
+            image="https://cdn.dribbble.com/users/952958/screenshots/4944767/new.png"></main-news>
+    </div>
+</body>
+
+<template id="head-page">
+    <link rel="stylesheet" href="./style/template-style.css" />
+    <section class="main-head">
+        <h1 id="hello"></h1>
+        <div class="blur"></div>
+        <img id="image-head" src="" alt="thisisimage" />
+    </section>
+</template>
+
+<template id="main-news">
+    <link rel="stylesheet" href="./style/template-style.css" />
+    <div class="news">
+        <a href="" id="link">
+            <img src="" alt="" id="image" />
+            <h1 id="title"></h1>
+        </a>
+    </div>
+</template>
+
+<script src="./script/app.js" type="module"></script>
+
+</html>
