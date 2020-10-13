@@ -31,15 +31,35 @@
         firebase.initializeApp(firebaseConfig);
     </script>
 </head>
+    <!-- <task-container id="1" content="Di chs" is-completed="false" date-modified="20/10"></task-container>
+    <task-container id="2" content="Day som" is-completed="false" date-modified="20/10"></task-container>
+    <task-container id="3" content="Doc sach" is-completed="true" date-modified="20/10"></task-container> -->
 
+    <task-list id="task-list-01" date-modified="2020/10/22"></task-list>
 <body>
-    <section class="list">
-        <div id="list-day">
-
-        </div>
-    </section>
+    
 </body>
-
+    <template id="task-container-template">
+        <div class="task-container">
+            <div class="aside-left">
+                <input type="radio" id="is-completed">
+            </div>
+            <div class="main-content">
+                <div id="content"></div>
+                <div id="date-modified"></div>
+            </div>
+            <div class="aside-right">
+                <button >up</button>
+            </div>
+        </div>
+    </template>
+    <template id="task-list-template">
+        <div class="task-list">
+            <h2 id="name"></h2>
+            <div id="tasks"></div>
+            <div id="date-modified"></div>
+        </div>
+    </template>
 <script src="./script/app.js" type="module"></script>
 
 </html>
