@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uuid/8.3.0/uuid.min.js"
+        integrity="sha512-ItCQZ+YZvhn8MTzDZtxcv5wMW5+tk/Xe5kVobGs6Xf/D/zmu/vQet9tfjrfUblAIgetyvQy8+LdwtegId3hw0Q=="
+        crossorigin="anonymous"></script>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-storage.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyDdrZZdm5pIVKcXUd_odLPMrM-Yn2V7Sm8",
+            authDomain: "todolist-be5cf.firebaseapp.com",
+            databaseURL: "https://todolist-be5cf.firebaseio.com",
+            projectId: "todolist-be5cf",
+            storageBucket: "todolist-be5cf.appspot.com",
+            messagingSenderId: "721801829612",
+            appId: "1:721801829612:web:61f02ed3473ccee01799c9"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+    </script>
+</head>
+
+<body>
+    <section class="list">
+        <div id="list-day">
+
+        </div>
+    </section>
+</body>
+
+<script src="./script/app.js" type="module"></script>
+
+</html>
