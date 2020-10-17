@@ -1,55 +1,84 @@
 import "./components/TaskContainer.js";
 import "./components/TaskList.js";
-let rawTasks = [
-  {
-    id: 1,
-    content: "dichoiiiiiii",
-    isCompleted: true,
-    dateModified: "2020/10",
-  },
-  {
-    id: 2,
-    content: "upcod",
-    isCompleted: true,
-    dateModified: "2020/11",
-  },
-  {
-    id: 3,
-    content: "showme",
-    isCompleted: false,
-    dateModified: "2020/10",
-  },
-  {
-    id: 4,
-    content: "wtf",
-    isCompleted: true,
-    dateModified: "2020/12",
-  },
-];
+import "./components/FormAddTask.js";
 
-let taskList = document.getElementById("task-list-01");
-taskList.setTasks(rawTasks);
+const db = firebase.firestore();
 
-// let data = [
+(async (id) => {
+  //Lay data
+  let result = await db.collection("Tasklists").doc(id).get();
+  let data = result.data();
+
+  //Tao 1 tasklist voi data vua lay ve
+  let $taskList = document.createElement("task-list");
+
+  $taskList.setAttribute("id", id);
+  $taskList.setAttribute("date-modified", data.dateModified);
+  $taskList.setTasks(data.tasks);
+  //Chen tasklist vua tao vao app
+  document.getElementById("app").appendChild($taskList);
+})("alkfhvdggnbPTTMtCocv");
+
+
+
+
+
+
+
+
+
+
+// let rawTasks = [
 //   {
-//     id: "103472849124",
-//     content: "123aaaaa",
-//     date: "12/10",
-//     isCompleted: "v",
+//     id: 1,
+//     content: "dichoiiiiiii",
+//     isCompleted: true,
+//     dateModified: "2020/10",
 //   },
 //   {
-//     id: "e32rqefs3rqefa",
-//     content: "123rr3rr3r",
-//     date: "12/10",
-//     isCompleted: "x",
+//     id: 2,
+//     content: "upcod",
+//     isCompleted: true,
+//     dateModified: "2020/11",
 //   },
 //   {
-//     id: "345678876543",
-//     content: "fet4twr3",
-//     date: "12/10",
-//     isCompleted: "v",
+//     id: 3,
+//     content: "showme",
+//     isCompleted: false,
+//     dateModified: "2020/10",
+//   },
+//   {
+//     id: 4,
+//     content: "wtf",
+//     isCompleted: true,
+//     dateModified: "2020/12",
 //   },
 // ];
+// let taskList = document.getElementById("task-list-01");
+// taskList.setTasks(rawTasks);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // const db = firebase.firestore();
 // // let x = new Date().toLocaleTimeString();
 // // let y = new Date().toLocaleDateString();

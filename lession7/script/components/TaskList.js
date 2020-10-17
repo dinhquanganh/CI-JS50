@@ -41,9 +41,14 @@ class TaskList extends HTMLElement {
   addTask() {}
   updateTask() {}
   deleteTask() {}
+  
   setTasks(tasks) {
     this.tasks = tasks;
     this.render();
   }
+  // set newTasks(tasks) {
+  //   this.tasks = tasks;
+  //   this.render();
+  // }
 }
 window.customElements.define("task-list", TaskList);
