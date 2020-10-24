@@ -10,9 +10,18 @@ class TaskList extends HTMLElement {
     this.attachShadow({ mode: "open" });
     this.shadowRoot.appendChild($template.content.cloneNode(true));
 
+    this.$formAddTask = this.shadowRoot.querySelector("form-add-task");
     this.$name = this.shadowRoot.getElementById("name");
     this.$tasks = this.shadowRoot.getElementById("tasks");
     this.$dateModified = this.shadowRoot.getElementById("date-modified");
+    this.$taskList = this.shadowRoot.querySelector(".task-list");
+    this.$taskList.addEventListener("add-task-event", (e) => {
+      console.log(e);
+    });
+    this.$taskList.addEventListener("update-task-event", (e) => {
+      console.log(e);
+    });
+
   }
 
   static get observedAttributes() {
@@ -20,16 +29,15 @@ class TaskList extends HTMLElement {
   }
 
   attributeChangedCallback(name, oldValue, newValue) {
-    if (name == "id") {
-      this.id = newValue;
-    }
-    if (name == "date-modified") {
-      this.dateModified = newValue;
-    }
+    if (name == "id") this.id = newValue;
+
+    if (name == "date-modified") this.dateModified = newValue;
 
     this.render();
   }
   render() {
+    this.$formAddTask.addtaskCallBack = this.addTask;
+
     this.$name.innerHTML = "LIST:  " + this.id;
     this.$dateModified.innerHTML = this.dateModified;
     this.$tasks.innerHTML = this.tasks
@@ -38,10 +46,12 @@ class TaskList extends HTMLElement {
       })
       .join("");
   }
-  addTask() {}
+  addTask() {
+    console.log(this);
+  }
   updateTask() {}
   deleteTask() {}
-  
+
   setTasks(tasks) {
     this.tasks = tasks;
     this.render();

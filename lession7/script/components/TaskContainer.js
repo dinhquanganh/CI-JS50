@@ -43,6 +43,7 @@ class TaskContainer extends HTMLElement {
     this.$content.innerHTML = this.content;
     this.$dateModified.innerHTML = this.dateModified;
     this.$isCompleted.checked = this.isCompleted;
+    this.addEventListener();
   }
 }
 window.customElements.define("task-container", TaskContainer);

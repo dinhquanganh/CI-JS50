@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Sriracha&display=swap');
+
+* {
+    font-family: 'Sriracha', cursive;
+}
+
+.task-container {
+    display: flex;
+    width: 100%;
+    border-bottom: 1px solid #cccccc;
+    margin-bottom: 10px;
+}
+
+.task-container .aside-left {
+    width: 5%;
+}
+
+.task-container .main-content {
+    width: 70%;
+}
+
+#date-modified {
+    font-size: 13px;
+    color: rgb(233, 170, 70);
+}
+
+[contenteditable=true] {
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+}
