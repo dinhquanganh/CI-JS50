@@ -89,6 +89,7 @@ class TaskList extends HTMLElement {
     }
 
     //update vao database
+    db.collection("Tasklists").doc(this.id).update({ tasks: this.tasks });
   }
 
   deleteTask() {}
