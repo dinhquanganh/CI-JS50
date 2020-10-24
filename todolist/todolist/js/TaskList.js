@@ -26,12 +26,13 @@ class TaskList extends HTMLElement {
     this.$taskList = this.shadowRoot.querySelector(".task-list");
 
     this.$taskList.addEventListener("add-task-event", (event) => {
-      console.log(event.detail);
       this.addTask(event.detail);
     });
     this.$taskList.addEventListener("update-task-event", (event) => {
-      console.log(event.detail);
       this.updateTask(event.detail);
+    });
+    this.$taskList.addEventListener("delete-task-event", (event) => {
+      this.deleteTask(event.detail);
     });
   }
 
@@ -82,17 +83,24 @@ class TaskList extends HTMLElement {
     let foundTask = this.tasks.find((item) => {
       return item.id === task.id;
     });
-    //thay doi noidung cho task vua tim dc
+    //thay doi noi dung cho task vua tim dc
+    console.log(foundTask);
     if (foundTask != null) {
-      foundTask.content = task.content;
-      console.log(foundTask);
+      this.tasks.splice(i, 1);
     }
 
     //update vao database
     db.collection("Tasklists").doc(this.id).update({ tasks: this.tasks });
   }
 
-  deleteTask() {}
+  deleteTask(task) {
+    //c1: filter
+    this.tasks = this.tasks.filter((item) => {
+      return item.id != task.id;
+    });
+    //update vao database
+    db.collection("Tasklists").doc(this.id).update({ tasks: this.tasks });
+  }
 
   render() {
     this.$name.innerHTML = "Task list: " + this.id;

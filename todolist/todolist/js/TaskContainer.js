@@ -20,6 +20,11 @@ class TaskContainer extends HTMLElement {
     this.$edit.onclick = () => {
       this.changeStatus();
     };
+    this.$delete = this.shadowRoot.getElementById("btn-delete");
+
+    this.$delete.onclick = () => {
+      this.deleteTask();
+    };
   }
 
   static get observedAttributes() {
@@ -66,6 +71,17 @@ class TaskContainer extends HTMLElement {
       },
     });
     this.dispatchEvent(updateTaskEvent);
+  }
+
+  deleteTask() {
+    let updateTaskEvent = new CustomEvent("delete-task-event", {
+      bubbles: true,
+      detail: {
+        id: this.id,
+      },
+    });
+    this.dispatchEvent(updateTaskEvent);
+    this.remove();
   }
 
   // làm nhiệm vụ hiển thị nội dung và bắt sự kiện cho các element nằm bên trong
