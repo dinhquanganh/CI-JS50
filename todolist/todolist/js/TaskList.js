@@ -88,18 +88,26 @@ class TaskList extends HTMLElement {
     if (foundTask != null) {
       this.tasks.splice(i, 1);
     }
-
     //update vao database
     db.collection("Tasklists").doc(this.id).update({ tasks: this.tasks });
   }
 
   deleteTask(task) {
-    //c1: filter
-    this.tasks = this.tasks.filter((item) => {
-      return item.id != task.id;
+    // //c1: filter
+    // this.tasks = this.tasks.filter((item) => {
+    //   return item.id != task.id;
+    // });
+    // //update vao database
+    //db.collection("Tasklists").doc(this.id).update({ tasks: this.tasks });
+    //c2 : splice
+    let foundTaskIndex = this.tasks.findIndex((item) => {
+      return item.id === task.id;
     });
-    //update vao database
-    db.collection("Tasklists").doc(this.id).update({ tasks: this.tasks });
+
+    if (foundTaskIndex >= 1) {
+      this.tasks.splice(foundTaskIndex, 1);
+      db.collection("Tasklists").doc(this.id).update({ tasks: this.tasks });
+    }
   }
 
   render() {
