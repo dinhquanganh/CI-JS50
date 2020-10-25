@@ -32,8 +32,9 @@
 <body>
     <!-- <task-list id="task-list-01" date-modified="2020/10/13"></task-list> -->
     <div id="app">
-
+        <form-register></form-register>
     </div>
+    
 </body>
 
 <template id="task-container-template">
@@ -71,6 +72,26 @@
         <button>Create Task</button>
     </form>
 </template>
+
+<template id="template-input-wrapper">
+    <div class="input-wrapper">
+        <label for="" id="input-label"></label>
+        <input type="text" id="input-main">
+        <div id="input-error"></div>
+    </div>
+</template>
+
+<template id="template-form-register">
+    <form class="form-register">
+        <h2>Sign in</h2>
+        <input-wrapper label="Tên đăng kí" id="name" type="text" error="" value=""></input-wrapper>
+        <input-wrapper label="Email" id="email" type="email" error="" value=""></input-wrapper>
+        <input-wrapper label="Password" id="password" type="password" error=""></input-wrapper>
+        <input-wrapper label="Password" id="password-confirmation" type="password" error=""></input-wrapper>
+        <button>Sign Up</button>
+    </form>
+</template>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/uuid/8.3.1/uuid.min.js"
     integrity="sha512-4JH7nC4nSqPixxbhZCLETJ+DUfHa+Ggk90LETm25fi/SitneSvtxkcWAUujvYrgKgvrvwv4NDAsFgdwCS79Dcw=="
     crossorigin="anonymous"></script>
