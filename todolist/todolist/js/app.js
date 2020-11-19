@@ -3,6 +3,8 @@ import "./TaskList.js";
 import "./FormAddTask.js";
 import "./InputWrapper.js";
 import "./FormRegister.js";
+import "./FormLogin.js";
+import "./route.js";
 // let rawTasks = [
 //     {id: 1, content: 'Đi chơi', isCompleted: true, dateModified: '2020/10/13'},
 //     {id: 2, content: 'Đi ăn', isCompleted: false, dateModified: '2020/10/13'},

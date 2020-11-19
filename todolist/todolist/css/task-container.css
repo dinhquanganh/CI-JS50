@@ -1,10 +1,9 @@
-@import url("https://fonts.googleapis.com/css2?family=Sriracha&display=swap");
 @font-face {
   font-family: "MyWebFont";
-  src: url("Apex Mk3-Medium.otf"); /* IE9 Compat Modes */
+  src: url(../Apex\Mk3-Medium.otf);
 }
 * {
-  font-family: "MyWebFont", Fallback, sans-serif;
+  font-family: "MyWebFont";
 }
 
 .task-container {

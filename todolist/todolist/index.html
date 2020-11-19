@@ -32,9 +32,9 @@
 <body>
     <!-- <task-list id="task-list-01" date-modified="2020/10/13"></task-list> -->
     <div id="app">
-        <form-register></form-register>
+        <form-login></form-login>
     </div>
-    
+
 </body>
 
 <template id="task-container-template">
@@ -82,19 +82,38 @@
 </template>
 
 <template id="template-form-register">
+    <link rel="stylesheet" href="./css/task-container.css">
     <form class="form-register">
-        <h2>Sign in</h2>
+        <h2>Dang ki</h2>
         <input-wrapper label="Tên đăng kí" id="name" type="text" error="" value=""></input-wrapper>
         <input-wrapper label="Email" id="email" type="email" error="" value=""></input-wrapper>
         <input-wrapper label="Password" id="password" type="password" error=""></input-wrapper>
-        <input-wrapper label="Password" id="password-confirmation" type="password" error=""></input-wrapper>
-        <button>Sign Up</button>
+        <input-wrapper label="Re-Password" id="password-confirmation" type="password" error=""></input-wrapper>
+        <button>Dang ki</button>
+        <a href="#/sign-in" id="login-link">Sang trang dang nhap</a>
+    </form>
+</template>
+
+<template id="form-login-template">
+    <link rel="stylesheet" href="./css/task-container.css">
+    <form class="form-login">
+        <h2>Dang Nhap</h2>
+        <input-wrapper id="email" label="Email" type="email"></input-wrapper>
+        <input-wrapper id="password" label="Password" type="password"></input-wrapper>
+        <button>Dang Nhap</button>
+        <a href="#/sign-up" id="register-link">Sang trang dang ki</a>
+
     </form>
 </template>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/uuid/8.3.1/uuid.min.js"
     integrity="sha512-4JH7nC4nSqPixxbhZCLETJ+DUfHa+Ggk90LETm25fi/SitneSvtxkcWAUujvYrgKgvrvwv4NDAsFgdwCS79Dcw=="
     crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js"
+    integrity="sha512-nOQuvD9nKirvxDdvQ9OMqe2dgapbPB7vYAMrzJihw5m+aNcf0dX53m6YxM4LgA9u8e9eg9QX+/+mPu8kCNpV2A=="
+    crossorigin="anonymous"></script>
+<script src="//unpkg.com/navigo@6"></script>
+<script src="./route.js"></script>
 <script src="./js/app.js" type="module"></script>
 
 </html>

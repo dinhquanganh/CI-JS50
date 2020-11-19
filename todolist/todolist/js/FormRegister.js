@@ -1,3 +1,4 @@
+import { md5 } from "./until.js";
 const $template = document.getElementById("template-form-register");
 
 class FormRegister extends HTMLElement {
@@ -18,6 +19,16 @@ class FormRegister extends HTMLElement {
       event.preventDefault();
       this.register();
     };
+
+    // this.$loginLink = this.shadowRoot.querySelector("#login-link");
+    // this.$loginLink.onclick = () => {
+    //   router.navigate("./sign-in");
+    // };
+
+    // this.$registerLink = this.shadowRoot.querySelector("#register-link");
+    // this.$registerLink.onclick = () => {
+    //   router.navigate("./sign-up");
+    // };
   }
   //   console.log(email, name, password, passwordConfirmation);
   // }.bind(this);
@@ -35,13 +46,17 @@ class FormRegister extends HTMLElement {
         .collection("user")
         .where("email", "==", email)
         .get();
-      console.log(result);
-
       if (result.empty) {
-        db.collection("user").add({
+        let resultUsers = await db.collection("user").add({
           name: name,
           email: email,
-          password: password,
+          password: md5(password),
+        });
+        alert("Success!");
+        db.collection("Tasklists").add({
+          tasks: [],
+          dateModified: new Date().toLocaleDateString(),
+          owner: resultUsers.id,
         });
       } else {
         document.write("Email da ton tai!");
