@@ -32,6 +32,7 @@
     background-color: blanchedalmond;
     transition: all 0.3s linear;
     border-radius: 5px;
+    text-align: center;
 }
 #question .answer #aw1:hover,
 #question .answer #aw2:hover,

@@ -40,15 +40,18 @@ var clickNext = (fData) => {
   let num = 0;
   showData.innerHTML = fData[0];
   next.addEventListener("click", () => {
-    if (num !== fData.length) {
-      num++;
+    if (num < fData.length) {
+      ++num;
       showData.innerHTML = fData[num];
+    }
+    if (num === fData.length) {
+      next.style.display = "none";
+      showData.innerHTML = "Diem cua ban la: ";
       returnQuestion.style.display = "block";
-    } else showData.innerHTML = "Diem cua ban la: ";
+    }
   });
 };
 
 var checkTrue = () => {
-  let modeAnswer = document.getElementsByClassName("modeAnswer");
-  console.log(modeAnswer);
+  let modeAnswer = document.getElementById("aw1");
 };

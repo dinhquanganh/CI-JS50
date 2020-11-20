@@ -11,6 +11,11 @@ class Question extends HTMLElement {
     this.$aw2 = this.shadowRoot.getElementById("aw2");
     this.$aw3 = this.shadowRoot.getElementById("aw3");
     this.$aw4 = this.shadowRoot.getElementById("aw4");
+    // this.$main = this.shadowRoot.getElementByClassName("modeAnswer");
+    this.render();
+  }
+  render() {
+    return this.$aw1.innerText;
   }
 
   static get observedAttributes() {
@@ -29,6 +34,7 @@ class Question extends HTMLElement {
     } else if (name == "aw4") {
       this.$aw4.innerHTML = newValue;
     }
+    console.log(this.render());
   }
 }
 

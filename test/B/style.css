@@ -32,6 +32,7 @@ main .next,main .return {
     background-color: blanchedalmond;
     transition: all 0.3s linear;
     border-radius: 5px;
+    text-align: center;
 }
 
 main .next:hover,main .return:hover {
